@@ -59,7 +59,7 @@ class App extends React.Component {
 
   clearCompleted = () => {
     this.setState({
-      list: this.state.list.filter(item => !item.purchased)
+      list: this.state.list.filter(item => !item.completed)
     });
   };
 
