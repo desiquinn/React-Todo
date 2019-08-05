@@ -30,6 +30,21 @@ class App extends React.Component {
     };
   }
 
+  toggleItem = id => {
+    this.setState({
+      list: this.state.list.map(item => {
+        if(item.id === id){
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        } else {
+          return item;
+        }
+      })
+    });
+  };
+
   addTask = taskName => {
     const newTask = {
       task: taskName,
@@ -42,13 +57,19 @@ class App extends React.Component {
     });
   }
 
+  clearCompleted = () => {
+    this.setState({
+      list: this.state.list.filter(item => !item.purchased)
+    });
+  };
+
 
   render() {
     return (
       <div>
         <h2>Desiree's To Do List</h2>
         <ToDoForm addTask={this.addTask} />
-        <ToDoList list={this.state.list} />
+        <ToDoList list={this.state.list} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }
