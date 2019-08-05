@@ -6,9 +6,15 @@ import ToDo from './Todo';
 
 const ToDoList = props => {
 
+    console.log("Props from ToDoList:", props);
+    console.log("TheList:", props.list);
+
     return (
         <div>
-            <ToDo />
+            {props.list.map( item => (
+                <ToDo item={item} key={item.id}/>
+            ))}
+            <button>Clear Completed</button>
         </div>
     )
 

@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Desiree's To Do List</h2>
-        <ToDoList />
+        <ToDoList list={this.state.list} />
       </div>
     );
   }

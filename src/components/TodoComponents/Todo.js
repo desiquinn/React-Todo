@@ -3,10 +3,13 @@ import React from 'react';
 
 const ToDo = props => {
 
+    console.log("Props From ToDo:", props);
+    console.log("The Task:", props.item.task);
+
     return (
-        <div>
-            
-        </div>
+        
+        <p>{props.item.task}</p>
+        
     )
 
 }
